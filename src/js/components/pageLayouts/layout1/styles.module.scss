@@ -1,0 +1,41 @@
+@import '../../../../scss/smart-grid.sass';
+@import '../../../../scss/vars.scss';
+
+//page styles
+.pageWrapper{	
+  // border: 1px solid red;  
+  position: relative;
+  background: linear-gradient(229.68deg, #6879BB 7.06%, #9300BB 95.23%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  
+  padding: 30px 15px 0 15px;
+}
+
+.logo{
+  width: 8.5rem;
+  // height: 2.5vw;
+}
+
+.formWrapper{
+  // border: 1px solid red;
+  background-color: white;
+  width: 31%;
+  margin-top: 30px;
+  flex-grow: 1;
+
+  padding: 2rem 2rem 0 2rem;
+
+  @media screen and (max-width: 1366px){
+    width: 100%;
+    max-width: 424px;
+  }
+
+  & > form{
+    // border: 1px solid black;
+  }
+}

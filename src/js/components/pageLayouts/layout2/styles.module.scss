@@ -1,0 +1,12 @@
+@import '../../../../scss/smart-grid.sass';
+@import '../../../../scss/vars.scss';
+
+//page styles
+.layout{	
+  // border: 1px solid red;  
+  position: relative;
+  background: $mainBg;
+  width: 100%;
+
+  padding: 1.5rem;
+}
