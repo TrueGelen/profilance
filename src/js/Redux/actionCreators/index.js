@@ -8,7 +8,11 @@ import {
   LOGIN_ERROR,
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
-  LOGOUT_ERROR
+  LOGOUT_ERROR,
+  /* ARTICLES */
+  ARTICLES_REQUEST,
+  ARTICLES_SUCCESS,
+  ARTICLES_ERROR,
 } from '../actionTypes'
 
 /* ERRORS */
@@ -47,6 +51,7 @@ export function loginSuccess(user) {
     type: LOGIN_SUCCESS,
     payload: {
       isLoading: false,
+      isAuthorized: true,
       user
     }
   }
@@ -70,12 +75,12 @@ export function logoutRequest() {
   }
 }
 
-export function logoutSuccess(user) {
+export function logoutSuccess() {
   return {
     type: LOGOUT_SUCCESS,
     payload: {
       isLoading: false,
-      user
+      isAuthorized: false
     }
   }
 }

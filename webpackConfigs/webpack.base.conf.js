@@ -80,12 +80,22 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|gif|svg|webp)$/,
+        test: /\.(svg)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
           // outputPath: `../${PATHS.static}/fonts/`
           outputPath: `${PATHS.static}/svg/`,
+          // publicPath: `${PATHS.static}/svg/`
+        }
+      },
+      {
+        test: /\.(png|jpg|gif|webp)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          // outputPath: `../${PATHS.static}/fonts/`
+          outputPath: `${PATHS.static}/img/`,
           // publicPath: `${PATHS.static}/svg/`
         }
       },

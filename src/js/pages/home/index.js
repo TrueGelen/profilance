@@ -1,22 +1,22 @@
 /* lib */
 import React from 'react'
+import { useSelector } from 'react-redux'
 /* components */
-
 /* other */
-// import { urlBuilder } from '../../routes'
 import {
 } from '../../Redux/actionCreators'
-
 /* styles */
 import md from './styles.module.scss'
 
 function HomePage(props) {
-  // console.log('HomePage')
 
-  let isAutorized = false
+  const userStore = useSelector(state => state.user)
 
   return (
-    <div>HomePage</div>
+    <div className={md.hello}>{userStore.isAuthorized ?
+      `Привет, ${userStore.user.firstName}!`
+      :
+      `Привет, Гость!`}</div>
   )
 }
 

@@ -14,7 +14,7 @@ html{
   }
 
   @include xs(font-size, 2.6vw);
-  @include xxs(font-size, 3.5vw);
+  @include xxs(font-size, 4vw);
 }
 
 menu, h1, h2, ul, li{
@@ -49,8 +49,8 @@ body{
 }
 
 .container{
-  position: relative;
-  border: 1px solid red;
+  // border: 1px solid red;
+  position: relative;  
   @include wrapper();
 
   @media screen and (min-width: 1921px){

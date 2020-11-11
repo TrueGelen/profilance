@@ -6,9 +6,7 @@ import PropTypes from 'prop-types'
 import md from './styles.module.scss'
 
 /* code */
-function Input({
-  value,
-  type,
+function Textarea({
   name,
   placeholder,
   onChange,
@@ -16,20 +14,21 @@ function Input({
   isValid,
   disabled,
   errMessage,
+  rows,
+  cols,
   ...props
 }) {
 
-
   return (
     <div className={`${md.wrap} ${className}`}>
-      <input
+      <textarea
         className={`${isValid ? md.inp : md.err}`}
-        type={type}
         name={name}
         placeholder={placeholder}
-        value={value}
         onChange={(e) => { onChange(e) }}
         disabled={disabled}
+        rows={rows ? rows : ""}
+        cols={cols ? cols : ""}
       />
       <p
         className={`${md.errMessage} ${isValid && md.invisible}`}
@@ -38,28 +37,28 @@ function Input({
   )
 }
 
-export default memo(Input)
+export default memo(Textarea)
 
-Input.defaultProps = {
-  value: '',
-  type: 'text',
+Textarea.defaultProps = {
   name: '',
   placeholder: '',
   onChange: () => { },
   className: null,
   isValid: true,
   disabled: false,
-  errMessage: 'Неизвестная ошибка'
+  errMessage: 'Неизвестная ошибка!',
+  rows: null,
+  cols: null
 }
 
-Input.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  type: PropTypes.string,
+Textarea.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   className: PropTypes.string,
   isValid: PropTypes.bool,
   disabled: PropTypes.bool,
-  errMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  errMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  rows: PropTypes.number,
+  cols: PropTypes.number
 }

@@ -1,0 +1,17 @@
+.form{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 35rem;
+
+  max-width: calc(100vw - 30px);
+
+  padding: 2rem;
+  margin: -.5rem 0;
+
+  & > *{
+    // border: 1px solid red;
+    margin: .5rem 0;
+  }
+}
