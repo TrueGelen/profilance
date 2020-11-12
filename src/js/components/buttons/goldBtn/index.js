@@ -8,6 +8,7 @@ function Button({
 	onClick,
 	type,
 	value,
+	name,
 	disabled,
 	...props }) {
 
@@ -17,20 +18,24 @@ function Button({
 	}
 
 	return (
-		<input
-			className={`${md.btn}
+		<>
+			{ console.log(`=====Button ${name && name}======`)}
+			<input
+				className={`${md.btn}
         ${className && className}`}
-			type={type}
-			value={value}
-			onClick={clickHandler}
-			disabled={disabled}>
-		</input>
+				type={type}
+				value={value}
+				onClick={clickHandler}
+				disabled={disabled}>
+			</input>
+		</>
 	)
 }
 
 export default memo(Button)
 
 Button.defaultProps = {
+	name: undefined,
 	type: "button",
 	className: undefined,
 	disabled: false,
@@ -42,5 +47,6 @@ Button.propTypes = {
 	onClick: PropTypes.func,
 	type: PropTypes.string,
 	disabled: PropTypes.bool,
-	value: PropTypes.string.isRequired
+	value: PropTypes.string.isRequired,
+	name: PropTypes.string
 }
