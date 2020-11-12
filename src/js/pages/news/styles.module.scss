@@ -21,6 +21,17 @@
   &__button{
     margin-left: 1rem;
   }
+
+  @include xxs-block{
+    flex-wrap: wrap;
+
+    margin: -.5rem 0 .5rem 0;
+
+    & > * {
+      width: 100%;
+      margin: .5rem 0;
+    }
+  }
 }
 
 .articles{
@@ -34,5 +45,9 @@
   & > * {
     width: calc(50% - 1rem);
     margin: 1rem 0;
+
+    @include md-block{
+      width: 100%;
+    }
   }
 }

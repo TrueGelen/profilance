@@ -90,11 +90,13 @@ function App(props) {
                   {
                     userStore.isAuthorized ?
                       <Button
+                        name="loginBtn"
                         onClick={logout}
                         value="Выйти"
                         disabled={userStore.isLoading} />
                       :
                       <Button
+                        name="loginBtn"
                         value="Войти"
                         disabled={userStore.isLoading}
                         onClick={showPopAuth} />

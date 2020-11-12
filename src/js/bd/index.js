@@ -43,7 +43,7 @@ export let articles = [
   {
     id: 0,
     authorId: 1,
-    title: "Какая то!",
+    title: "Какая то статья Петра!",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, pariatur vero? Sapiente amet, aliquam harum illo quo quidem eligendi eum earum maiores, vero debitis omnis quod aperiam laboriosam, doloremque iure! Similique molestias nostrum eveniet vero. Quasi ex sint inventore distinctio a odit exercitationem! Velit unde molestias sint non vero itaque.",
     date: "2020-10-01",
     approved: true
@@ -51,7 +51,7 @@ export let articles = [
   {
     id: 1,
     authorId: 1,
-    title: "Это вам не это!",
+    title: "Это вам не это Петра!",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, pariatur vero? Sapiente amet, aliquam harum illo quo quidem eligendi eum earum maiores, vero debitis omnis quod aperiam laboriosam, doloremque iure! Similique molestias nostrum eveniet vero. Quasi ex sint inventore distinctio a odit exercitationem! Velit unde molestias sint non vero itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, pariatur vero?",
     date: "2020-11-05",
     approved: false

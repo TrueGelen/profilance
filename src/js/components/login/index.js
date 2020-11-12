@@ -36,6 +36,7 @@ export default function LogIn({
     },
     password: {
       value: '',
+      isValid: true,
       validate: (value) => { return true }
     }
   })
@@ -76,6 +77,7 @@ export default function LogIn({
       const email = state.email.value
       const password = state.password.value
       if (auth(email, password)) {
+        setState(prevState => ({ ...prevState, password: { ...prevState.password, value: '' } }))
         dispatch(loginSuccess({ ...users[usersMap[email]], password: undefined }))
       } else {
         dispatch(loginError())
@@ -99,20 +101,17 @@ export default function LogIn({
         placeholder="Электронная почта"
         errMessage={state.email.errMessage}
         isValid={state.email.isValid}
-        onChange={onChange}
-      />
+        onChange={onChange} />
       <PasswordInp
         disabled={isLoading}
         value={state.password.value}
         name="password"
         placeholder="Пароль"
-        onChange={onChange}
-      />
+        onChange={onChange} />
       <Button
         type="submit"
         disabled={isLoading}
-        value={isLoading ? "Вход в систему, ждите..." : "Войти"}
-      ></Button>
+        value={isLoading ? "Вход в систему, ждите..." : "Войти"} />
     </form>
   )
 }
