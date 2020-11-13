@@ -13,8 +13,10 @@ export default function PopUp({
 
   const overlay = useRef(null);
 
+  let nodeOnMouseDown = null
+
   const close = (e) => {
-    if (e.target === overlay.current) {
+    if (e.target === overlay.current && nodeOnMouseDown === overlay.current) {
       onClose()
     }
   }
@@ -23,7 +25,8 @@ export default function PopUp({
     <div
       ref={overlay}
       className={`${md.wrap} ${show && md.wrap_show} ${className && className}`}
-      onClick={close}>
+      onClick={close}
+      onMouseDown={(e) => { nodeOnMouseDown = e.target }}>
       {props.children}
     </div>
   )

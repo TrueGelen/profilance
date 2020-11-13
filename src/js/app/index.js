@@ -1,5 +1,5 @@
 /* libs */
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
 /* components */
@@ -54,6 +54,21 @@ function App(props) {
     />
   })
 
+  const authBtn = useMemo(() => {
+    return userStore.isAuthorized ?
+      <Button
+        name="loginBtn"
+        onClick={logout}
+        value="Выйти"
+        disabled={userStore.isLoading} />
+      :
+      <Button
+        name="loginBtn"
+        value="Войти"
+        disabled={userStore.isLoading}
+        onClick={showPopAuth} />
+  }, [userStore.isAuthorized])
+
   // console.log("userStore.isAuthorized", userStore.isAuthorized)
 
   return (
@@ -87,20 +102,7 @@ function App(props) {
                       </NavLink>
                     </ul>
                   </menu>
-                  {
-                    userStore.isAuthorized ?
-                      <Button
-                        name="loginBtn"
-                        onClick={logout}
-                        value="Выйти"
-                        disabled={userStore.isLoading} />
-                      :
-                      <Button
-                        name="loginBtn"
-                        value="Войти"
-                        disabled={userStore.isLoading}
-                        onClick={showPopAuth} />
-                  }
+                  {authBtn}
                 </div>
               </div>
             </header>
@@ -125,8 +127,7 @@ function App(props) {
         <NoticeError
           text={errStore.errMessage}
           onClose={() => { dispatch(errorHide()) }}
-          isError={errStore.isError}
-        />
+          isError={errStore.isError} />
       </>
     </Router >
   )
