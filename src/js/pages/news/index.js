@@ -107,7 +107,7 @@ function NewsPage(props) {
       })
     }
     return memoized
-  }, [allArticles, userStore.user.id])
+  }, [allArticles, userStore.user.id, search])
 
   useEffect(() => {
     console.log("func useEffect")
